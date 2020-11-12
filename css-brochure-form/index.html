@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Challenge - Brochure Form</title>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="align-center">
+  <h1 class="uppercase">Learn More</h1>
+  <form>
+    <div class="left-align">
+      <label for="company-email" class="uppercase">Company Email</label>
+    <div>
+      <input type="email" name="email" id="company-email" placeholder="sally@company.com">
+    </div>
+    <label for="person-name" class="uppercase">Name</label>
+    <div>
+      <input type="text" name="person-name" id="person-name" placeholder="Sally Smith">
+    </div>
+    <label for="hiring" class="uppercase">Where Are You Hiring?</label>
+    <div>
+      <input type="text" name="hiring" id="hiring" placeholder="City, Country">
+    </div>
+    <label for="engineer-hire" class="uppercase">How Many Engineers Are You Hiring In The Next 6 Months?</label>
+    <div>
+      <select name="engineer" id="engineer-hire">
+        <option value="engineer" selected>1-2 Engineers</option>
+        <option value="engineer">3-4 Engineers</option>
+        <option value="engineer">5-6 Engineers</option>
+        <option value="engineer">6+ Engineers</option>
+      </select>
+    </div>
+    </div>
+    <div>
+      <div class="right-align">
+        <button type="submit" class="uppercase">Submit</button>
+      </div>
+    </div>
+  </form>
+  </div>
+</body>
+</html>
