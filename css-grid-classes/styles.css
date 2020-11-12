@@ -1,15 +1,10 @@
 .container {
-  margin-right: 25%;
-  margin-left: 25%;
+
 }
 
-h1 {
-  font-size: 3vmin;
-}
 
-.row {
- display: flex;
- justify-content: center;
+.column {
+  flex-basis: 100%;
 }
 
 .column-two {
@@ -22,17 +17,4 @@ h1 {
 
 .column-one-fourth {
   flex-basis: 25%;
-}
-
-img {
-  max-width: 100%;
-  width: 100%;
-}
-
-p {
-  font-size: 1.2vmin;
-}
-
-h2 {
-  font-size: 1.5vmin;
 }
