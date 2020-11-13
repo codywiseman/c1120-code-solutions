@@ -1,7 +1,11 @@
-.container {
-
+.row {
+  display: flex;
 }
 
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
 .column {
   flex-basis: 100%;
@@ -17,4 +21,8 @@
 
 .column-one-fourth {
   flex-basis: 25%;
+}
+
+.character {
+  width: 100%;
 }
