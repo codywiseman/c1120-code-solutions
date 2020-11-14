@@ -3,7 +3,7 @@
   max-width: 1000px;
 }
 
-/* First Row Page 1 */
+/* Page 1 Row 1 */
 
 .top-row {
   padding-top:20px;
@@ -58,7 +58,7 @@
    color: #C7C7C7;
 }
 
-/* Second Row Page 1 */
+/* Page 1 Row 2 */
 
 .started-container {
   width: 875px;
@@ -112,7 +112,7 @@
   height: 100%;
 }
 
-/* Second Page Row 3 */
+/* Page 1 Row 3*/
 
 .flex-columns {
   display: flex;
@@ -125,8 +125,8 @@
 .canvas-locations-container {
   background-color: #FAFAFA;
   position: relative;
-  right: 50px;
-  height: 400px;
+  right: 62px;
+  height: 360px;
   width: 1000px;
   margin-top: 40px;
 }
@@ -151,14 +151,14 @@
 
 .column-half-left {
   position: absolute;
-  bottom: 100px;
+  bottom: 50px;
   left: 150px;
   line-height: 50px;
 }
 
 .column-half-right {
   position: absolute;
-  bottom: 100px;
+  bottom: 50px;
   right: 150px;
   line-height: 50px;
 }
@@ -168,4 +168,129 @@
   text-align: center;
   font-family: 'Avenir', sans-serif;
   color: #777777;
+}
+
+/* Page 1 Row 4 */
+
+.learn-more-row {
+  width: 1000px;
+  height: 125px;
+  position: relative;
+  right: 50px;
+}
+
+.learn-more-row h2 {
+  font-family: 'Tiempos Headline', serif;
+  color: #777777;
+}
+
+.learn-more-row p {
+  font-family: 'Avenir', sans-serif;
+  color: #777777;
+  font-size: 13px;
+  line-height: 40px;
+}
+
+.learn-column-left {
+  position: absolute;
+  top: 30px;
+  left: 55px;
+}
+
+.learn-column-right a {
+  font-family: 'Avenir', sans-serif;
+  text-decoration: none;
+  background-color: #294464;
+  color: white;
+  padding: 8px 26px;
+  border-radius: 3px;
+  position: absolute;
+  top: 47px;
+  right: 100px;
+}
+
+/* Page 1 Row 5 */
+
+.canvas-contact-row {
+  background-color: #525351;
+  font-family: 'Avenir', sans-serif;
+  color: white;
+  height: 300px;
+  width: 1000px;
+  position: relative;
+  right: 62px;
+}
+
+.contact-column-half h2 {
+  position: absolute;
+  top: 75px;
+  left: 70px;
+  font-size: 30px;
+  font-weight: 100;
+}
+
+.contact-column-middle h4,
+.contact-column-right h4 {
+  font-size: 14px;
+}
+
+.contact-list a {
+  text-decoration: none;
+  color: white;
+  font-size: 13.5px;
+}
+
+.contact-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info {
+  position: absolute;
+  bottom: 75px;
+  left: 70px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.contact-column-middle {
+  line-height: 30px;
+  position: absolute;
+  top: 75px;
+  right: 400px;
+}
+
+.contact-column-right {
+  position: absolute;
+  right: 150px;
+  top: 75px;
+  line-height: 30px;
+}
+
+/* Page 1 Row 6 */
+
+.privacy-terms-row {
+  width: 1000px;
+  background-color: #FAFAFA;
+  position: relative;
+  right: 62px;
+  height: 100px;
+  margin-bottom: 30px;
+}
+
+.privacy-terms-column {
+  position: absolute;
+  top: 40px;
+}
+
+.privacy-terms-column li {
+    display: inline;
+    padding: 0 20px;
+}
+
+.privacy-terms-column a {
+    text-decoration: none;
+    color: #777777;
+    font-family: 'Avenir', sans-serif;
+    font-size: 15px;
 }
