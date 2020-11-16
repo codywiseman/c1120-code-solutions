@@ -1,270 +1,266 @@
 * {
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 1500px;
 }
 
-/* Page 1 Row 1 */
+/* Page One Row One (Nav Bar)*/
 
-.top-row {
-  padding-top:20px;
-  padding-bottom: 15px;
+.row {
+  display: flex
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  padding: 15px;
   border-bottom: 1px solid #DEDEDE;
+  margin-left: 70px;
+  margin-right: 70px
 }
 
-.homeNav {
+.blue-logo {
+  width: 160px;
+}
+
+.head-logo-container {
+  margin-left: 80px;
+}
+
+.nav-container {
+  margin-right: 80px;
+}
+
+.nav-link {
   display: inline;
+  text-decoration: none;
+  margin-left: 40px;
 }
 
-.column-title {
-  position: absolute;
-  padding-left: 58px;
-}
-
-.columnNav {
-  width: 540px;
-  margin-right: 0;
-  padding-right: 35px;
-  padding-top: 12px;
-}
-
-.homeNav {
-  margin-left: 20px;
+.head-nav {
+  font-family: 'Avenir', serif;
+  font-size: 18px;
+  color: #C7C7C7;
 }
 
 .contact-us-background {
   background-color: #294464;
-  padding: 7px;
-  border-radius: 3px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: 30px;
   font-family: 'Avenir', serif;
-  font-size: 14px;
+  font-size: 20px;
   color: #ffffff;
 }
 
 .contact-us-background:hover {
   background-color: white;
   color: #C7C7C7;
-
 }
 
-.header-font {
-  font-family: 'Avenir', serif;
-  font-size: 30px;
-  color: #294464;
+/*Page One Row 2 (EMR with background img*/
+
+.emr-container {
+  height: 600px;
+  margin: 65px 160px 40px;
+  position: relative;
 }
 
-.nav-font {
-   font-family: 'Avenir', serif;
-   font-size: 14px;
-   color: #C7C7C7;
-}
-
-/* Page 1 Row 2 */
-
-.started-container {
-  width: 875px;
-  height: 450px;
-  margin: 30px 50px;
-}
-
-.started-image {
+.emr-image {
   background-image: url('images/hero.jpg');
   background-size: cover;
   position: relative;
-  margin: 0;
   width: 100%;
-  height: 100%;
+  height: 575px;
 }
 
-.column-single h1 {
-  font-family: 'Tiempos Headline', serif;
-  color: white;
+.emr-text {
   position: absolute;
-  left: 55px;
-  top: 55px;
+  left: 70px;
+  top: 74px;
 }
 
-.column-single p {
-  font-family: 'Avenir', sans-serif;
-  color: white;
-  font-size: 14px;
-  line-height: 24px;
-  position: absolute;
-  bottom: 120px;
-  left: 55px;
+.emr-text h1 {
+  font-family: 'tiempos headline';
+  color: #ffffff;
+  font-size: 40px;
 }
 
-.column-single a {
-  font-family: 'Avenir', sans-serif;
+.emr-text p {
+  font-family: 'Avenir', serif;
+  color:#ffffff;
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+
+.emr-text a {
+  font-family: 'Avenir', serif;
+  color:#ffffff;
   text-decoration: none;
   background-color: #294464;
-  color: white;
-  padding: 8px 26px;
-  border-radius: 3px;
-  position: absolute;
-  left: 55px;
-  bottom: 55px;
+  padding: 15px 50px;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
-.overlay {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
 
 /* Page 1 Row 3*/
 
-.flex-columns {
-  display: flex;
-}
-
-.column-full, .column-half {
-  text-align: center;
-}
-
-.canvas-locations-container {
+.clinicians-container {
+  width: 1400px;
+  height: 550px;
   background-color: #FAFAFA;
+  text-align: center;
   position: relative;
-  right: 62px;
-  height: 360px;
-  width: 1000px;
-  margin-top: 40px;
 }
 
-.column-full h2 {
+.locations-left,
+.locations-right  {
+  font-family: 'Avenir', sans-serif;
+  color: #777777;
+  font-size: 20px;
   position: absolute;
-  top: 50px;
-  left: 390px;
+  line-height: 65px;
+  bottom: 105px
+}
+
+.locations-left {
+  left: 205px;
+}
+
+.locations-right {
+  right: 205px;
+}
+
+.clinicians-title p {
+  font-family: 'Avenir', sans-serif;
+  color: #777777;
+  font-size: 18px;
+  position: absolute;
+  left: 446px;
+  top: 112px;
+  line-height: 30px;
+}
+
+.clinicians-title h2 {
   font-family: 'Tiempos Headline', serif;
   color: #777777;
-}
-
-.column-full p {
+  font-size: 32px;
   position: absolute;
-  top: 90px;
-  left: 330px;
-  line-height: 20px;
-  font-family: 'Avenir', sans-serif;
-  color: #777777;
-  font-size: 13px;
+  left: 531px;
+  top: 55px;
+  font-weight: 100;
 }
 
-.column-half-left {
-  position: absolute;
-  bottom: 50px;
-  left: 150px;
-  line-height: 50px;
-}
-
-.column-half-right {
-  position: absolute;
-  bottom: 50px;
-  right: 150px;
-  line-height: 50px;
-}
-
-.column-half-left,
-.column-half-right {
-  text-align: center;
-  font-family: 'Avenir', sans-serif;
-  color: #777777;
-}
 
 /* Page 1 Row 4 */
 
-.learn-more-row {
-  width: 1000px;
-  height: 125px;
+.learn-more {
+  width: 1400px;
+  height: 180px;
   position: relative;
-  right: 50px;
 }
 
-.learn-more-row h2 {
+.learn-more h2 {
   font-family: 'Tiempos Headline', serif;
   color: #777777;
+  font-size: 32px;
+  font-weight: 100;
 }
 
-.learn-more-row p {
+.learn-more p {
   font-family: 'Avenir', sans-serif;
   color: #777777;
-  font-size: 13px;
-  line-height: 40px;
+  font-size: 17px;
+  line-height: 50px;
+  font-weight: 100;
 }
 
 .learn-column-left {
   position: absolute;
-  top: 30px;
-  left: 55px;
+  top: 50px;
+  left: 150px;
 }
 
 .learn-column-right a {
-  font-family: 'Avenir', sans-serif;
+  font-family: 'Avenir', serif;
+  color: #ffffff;
   text-decoration: none;
   background-color: #294464;
-  color: white;
-  padding: 8px 26px;
-  border-radius: 3px;
+  padding: 15px 50px;
+  border-radius: 5px;
+  font-size: 20px;
   position: absolute;
-  top: 47px;
-  right: 100px;
+  top: 50px;
+  right: 150px;
 }
 
 /* Page 1 Row 5 */
 
-.canvas-contact-row {
+.contact-row {
   background-color: #525351;
   font-family: 'Avenir', sans-serif;
   color: white;
-  height: 300px;
-  width: 1000px;
+  height: 475px;
+  width: 1400px;
   position: relative;
-  right: 62px;
 }
 
-.contact-column-half h2 {
+.white-logo {
+  width: 160px;
   position: absolute;
-  top: 75px;
-  left: 70px;
-  font-size: 30px;
-  font-weight: 100;
+  left: 100px;
+  top: 115px;
 }
 
 .contact-column-middle h4,
 .contact-column-right h4 {
-  font-size: 14px;
+  font-size: 23px;
+  font-weight: 100;
 }
 
 .contact-list a {
   text-decoration: none;
   color: white;
-  font-size: 13.5px;
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 27px;
 }
 
-.contact-list ul {
+.contact-column-middle ul,
+.contact-column-right ul {
   list-style: none;
   padding: 0;
 }
 
+.contact-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 100;
+}
+
 .contact-info {
   position: absolute;
-  bottom: 75px;
-  left: 70px;
-  font-size: 12px;
-  line-height: 20px;
+  line-height: 30px;
+  font-size: 18px;
+  bottom: 155px;
+  left: 100px;
 }
 
 .contact-column-middle {
-  line-height: 30px;
+  line-height: 50px;
   position: absolute;
-  top: 75px;
-  right: 400px;
+  top: 100px;
+  right: 600px;
 }
 
 .contact-column-right {
+  line-height: 50px;
   position: absolute;
-  right: 150px;
-  top: 75px;
-  line-height: 30px;
+  top: 100px;
+  right: 215px;
 }
 
 /* Page 1 Row 6 */
@@ -273,24 +269,24 @@
   width: 1000px;
   background-color: #FAFAFA;
   position: relative;
-  right: 62px;
-  height: 100px;
   margin-bottom: 30px;
+  width: 1400px;
+  height: 150px;
 }
 
 .privacy-terms-column {
   position: absolute;
-  top: 40px;
+  top: 63px;
 }
 
 .privacy-terms-column li {
     display: inline;
-    padding: 0 20px;
+    padding: 0 30px;
 }
 
 .privacy-terms-column a {
     text-decoration: none;
     color: #777777;
     font-family: 'Avenir', sans-serif;
-    font-size: 15px;
+    font-size: 22px;
 }
