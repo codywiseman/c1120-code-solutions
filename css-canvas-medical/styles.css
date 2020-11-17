@@ -1,0 +1,291 @@
+* {
+  margin: 0 auto;
+  max-width: 1500px;
+}
+
+/* Page One Row One (Nav Bar)*/
+
+.row {
+  display: flex
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #DEDEDE;
+  margin-left: 70px;
+  margin-right: 70px
+}
+
+.blue-logo {
+  width: 160px;
+}
+
+.head-logo-container {
+  margin-left: 80px;
+}
+
+.nav-container {
+  margin-right: 80px;
+}
+
+.nav-link {
+  display: inline;
+  text-decoration: none;
+  margin-left: 40px;
+}
+
+.head-nav {
+  font-family: 'Avenir', serif;
+  font-size: 18px;
+  color: #C7C7C7;
+}
+
+.contact-us-background {
+  background-color: #294464;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: 30px;
+  font-family: 'Avenir', serif;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.contact-us-background:hover {
+  background-color: white;
+  color: #C7C7C7;
+}
+
+/*Page One Row 2 (EMR with background img)*/
+
+.emr-container {
+  height: 600px;
+  margin: 65px 160px 40px;
+  position: relative;
+}
+
+.emr-img {
+  background-size: cover;
+  width: 1190px;
+  height: 590px;
+  filter: contrast(0.7) saturate(0.9) brightness(0.9)
+}
+
+.emr-text {
+  position: absolute;
+  left: 70px;
+  top: 74px;
+}
+
+.emr-text h1 {
+  font-family: 'tiempos headline';
+  color: #ffffff;
+  font-size: 40px;
+}
+
+.emr-text p {
+  font-family: 'Avenir', serif;
+  color:#ffffff;
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+
+.emr-text a {
+  font-family: 'Avenir', serif;
+  color:#ffffff;
+  text-decoration: none;
+  background-color: #294464;
+  padding: 15px 50px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+
+/* Page 1 Row 3*/
+
+.clinicians-container {
+  width: 1400px;
+  height: 550px;
+  background-color: #FAFAFA;
+  text-align: center;
+  position: relative;
+}
+
+.locations-left,
+.locations-right  {
+  font-family: 'Avenir', sans-serif;
+  color: #777777;
+  font-size: 20px;
+  position: absolute;
+  line-height: 65px;
+  bottom: 105px
+}
+
+.locations-left {
+  left: 205px;
+}
+
+.locations-right {
+  right: 205px;
+}
+
+.clinicians-title p {
+  font-family: 'Avenir', sans-serif;
+  color: #777777;
+  font-size: 18px;
+  position: absolute;
+  left: 446px;
+  top: 112px;
+  line-height: 30px;
+}
+
+.clinicians-title h2 {
+  font-family: 'Tiempos Headline', serif;
+  color: #777777;
+  font-size: 32px;
+  position: absolute;
+  left: 531px;
+  top: 55px;
+  font-weight: 100;
+}
+
+
+/* Page 1 Row 4 */
+
+.learn-more {
+  width: 1400px;
+  height: 180px;
+  position: relative;
+}
+
+.learn-more h2 {
+  font-family: 'Tiempos Headline', serif;
+  color: #777777;
+  font-size: 32px;
+  font-weight: 100;
+}
+
+.learn-more p {
+  font-family: 'Avenir', sans-serif;
+  color: #777777;
+  font-size: 17px;
+  line-height: 50px;
+  font-weight: 100;
+}
+
+.learn-column-left {
+  position: absolute;
+  top: 50px;
+  left: 150px;
+}
+
+.learn-column-right a {
+  font-family: 'Avenir', serif;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #294464;
+  padding: 15px 50px;
+  border-radius: 5px;
+  font-size: 20px;
+  position: absolute;
+  top: 50px;
+  right: 150px;
+}
+
+/* Page 1 Row 5 */
+
+.contact-row {
+  background-color: #525351;
+  font-family: 'Avenir', sans-serif;
+  color: white;
+  height: 475px;
+  width: 1400px;
+  position: relative;
+}
+
+.white-logo {
+  width: 160px;
+  position: absolute;
+  left: 100px;
+  top: 115px;
+}
+
+.contact-column-middle h4,
+.contact-column-right h4 {
+  font-size: 23px;
+  font-weight: 100;
+}
+
+.contact-list a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 27px;
+}
+
+.contact-column-middle ul,
+.contact-column-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 100;
+}
+
+.contact-info {
+  position: absolute;
+  line-height: 30px;
+  font-size: 18px;
+  bottom: 155px;
+  left: 100px;
+}
+
+.contact-column-middle {
+  line-height: 50px;
+  position: absolute;
+  top: 100px;
+  right: 600px;
+}
+
+.contact-column-right {
+  line-height: 50px;
+  position: absolute;
+  top: 100px;
+  right: 215px;
+}
+
+/* Page 1 Row 6 */
+
+.privacy-terms-row {
+  width: 1000px;
+  background-color: #FAFAFA;
+  position: relative;
+  margin-bottom: 30px;
+  width: 1400px;
+  height: 150px;
+}
+
+.privacy-terms-column {
+  position: absolute;
+  top: 63px;
+}
+
+.privacy-terms-column li {
+    display: inline;
+    padding: 0 30px;
+}
+
+.privacy-terms-column a {
+    text-decoration: none;
+    color: #777777;
+    font-family: 'Avenir', sans-serif;
+    font-size: 22px;
+}
