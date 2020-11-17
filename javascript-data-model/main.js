@@ -38,8 +38,8 @@ var orderHistory = [
     item: ['Gamecube Controller - Super Smash Bros. Edition(Nintendo Switch)', 'The Art of Sql. Faroult, Stephane'],
     numOfItems: 2,
     itemOnePrice: 94.95,
-    itemTwoPrice: 33.999
-  orderNum: 113 - 2883177 - 2648248,
+    itemTwoPrice: 33.99,
+    orderNum: 113 - 2883177 - 2648248,
     orderPlaced: '7/3/20',
     totalPrice: 138.93,
     shipTo: 'JS Masher',
