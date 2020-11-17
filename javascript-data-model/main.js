@@ -1,7 +1,6 @@
 /* exported orderHistory */
 
 var orderHistory = [
-  var orderHistory = [
   {
     item: 'JavaScript for impatient programmers. Rauchsmayer, Dr.Axel',
     numOfItems: 1,
