@@ -1,0 +1,51 @@
+* {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+}
+
+.row-head{
+  width: 100%;
+  margin: 15px auto;
+  text-align: center;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: center;
+}
+
+div > .col {
+  margin: auto 3px;
+  max-width: 215px;
+}
+
+.phone-image {
+  width: 215px;
+  flex-basis: 25%;
+}
+
+.icon-image {
+  width: 40px;
+  display: block;
+}
+
+h3 {
+  font-size: .9rem;
+  text-align: center;
+}
+
+p {
+  font-size: .7rem;
+  text-align: center;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 105px;
+}
