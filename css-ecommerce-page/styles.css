@@ -1,0 +1,53 @@
+* {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+body {
+  font-family: 'DM San', sans-serif;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+
+p {
+  font-size: .75rem;
+  margin-top: 10px;
+}
+
+.header-row {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.main-row {
+  display: flex;
+  justify-content: center;
+}
+
+.merch-image {
+  width: 180px;
+  height: 270px;
+}
+
+.col {
+  margin: 0 10px;
+}
+
+.price-box {
+  background-color: #FEF1E6;
+  font-weight: 500;
+  padding: 0.1rem;
+}
+
+.brand {
+  font-weight: 500;
+}
+
+.delete-price,
+.sizes {
+  color: #DCDCDC;
+}
