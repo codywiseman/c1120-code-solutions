@@ -1,10 +1,10 @@
 /* exported omit */
 
 function omit(source, keys) {
-  var newObject = source;
+  var newObject = {};
   for (var prop in source) {
-    if (keys.indexOf(prop) !== -1 && source[prop] !== undefined) {
-      delete newObject[prop];
+    if (keys.indexOf(prop) === -1) {
+      newObject[prop] = source[prop];
     }
   }
   return newObject;
