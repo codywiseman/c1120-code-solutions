@@ -1,0 +1,29 @@
+*{
+  margin: auto;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  font-family: 'Kanit', sans-serif;
+  font-size: 50px;
+  padding-bottom: 0;
+}
+
+.underline {
+  border-bottom: 5px solid black;
+}
+
+.green {
+  color: greenyellow;
+}
+
+.red {
+  border-color: red;
+  color: red;
+}
