@@ -1,0 +1,38 @@
+* {
+  margin: auto;
+}
+
+.flex {
+ display: flex;
+}
+
+.nav-container {
+  padding: 15px;
+  margin: 15px 70px;
+  border-bottom: 1px solid #DEDEDE;
+}
+
+li {
+  display: inline-block;
+}
+
+.header-logo {
+  width: 9rem;
+}
+
+.nav-link {
+  font-family: 'Avenir', serif;
+  color: #C7C7C7;
+}
+
+.contact-us-background {
+  background-color: #294464;
+  border-radius: 0.2rem;
+  font-family: 'Avenir', serif;
+  color: #ffffff;
+}
+
+.contact-us-background:hover {
+  background-color: white;
+  color: #C7C7C7;
+}
