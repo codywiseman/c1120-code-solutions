@@ -1,12 +1,13 @@
 * {
   margin: auto;
+  max-width: 1200px;
 }
 
 .flex {
  display: flex;
 }
 
-.nav-container {
+.header-container {
   padding: 15px;
   margin: 15px 70px;
   border-bottom: 1px solid #DEDEDE;
@@ -23,6 +24,7 @@ li {
 .nav-link {
   font-family: 'Avenir', serif;
   color: #C7C7C7;
+  margin-left: 1rem;
 }
 
 .contact-us-background {
@@ -30,9 +32,64 @@ li {
   border-radius: 0.2rem;
   font-family: 'Avenir', serif;
   color: #ffffff;
+  padding: 0.4rem 1rem;
 }
 
 .contact-us-background:hover {
   background-color: white;
   color: #C7C7C7;
+}
+
+.logo-container {
+  margin-left: 2rem;
+}
+
+.nav-container {
+  margin-right: 2rem;;
+}
+
+
+/* Photo section */
+
+.top-main-container {
+  max-width: 60rem;
+  height: 28rem;
+  margin-top: 6rem;
+  position: relative;
+}
+
+.patient-photo {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.75);
+}
+
+.patient-image-text {
+  position: absolute;
+  top: 9rem;
+  left: 4rem;
+}
+
+.patient-image-text h1 {
+  font-family: 'tiempos headline';
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.patient-image-text p {
+  font-family: 'Avenir', serif;
+  color:#ffffff;
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* Second row main*/
+
+.main-container-two {
+  background-color: #FBFBFB;
+  max-width: 65rem;
+  height: 35rem;
+  margin-top: 3rem;
 }
