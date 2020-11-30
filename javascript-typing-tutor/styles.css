@@ -1,0 +1,44 @@
+*{
+  margin: auto;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+h1 {
+  font-family: 'Courier Prime', monospace;
+  font-size: 50px;
+}
+
+p{
+  font-family: 'Courier Prime', monospace;
+  font-size: 20px;
+  position: absolute;
+  bottom: 200px;
+}
+
+#space {
+  display: inline-block;
+  width: 29px;
+  margin-bottom: -22.8px;
+  height: 100%;
+}
+
+.underline {
+  border-bottom: 5px solid black;
+}
+
+.green {
+  color: greenyellow;
+}
+
+.red {
+  border-color: red;
+  color: red;
+  border-bottom: 5px solid red;
+}
