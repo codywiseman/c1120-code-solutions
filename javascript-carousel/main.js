@@ -3,10 +3,12 @@ var $rightChevron = document.querySelector('.fa-chevron-right');
 var $images = document.querySelectorAll('li');
 var $activeImage = document.querySelector('.img');
 var $dots = document.querySelectorAll('.row2 i');
+var $dotsContainer = document.querySelector('.row2')
 
 var intervalID = null;
 
 var imageCount = 0
+
 
 
 $rightChevron.addEventListener('click', function () {
@@ -24,7 +26,11 @@ $rightChevron.addEventListener('click', function () {
     $dots[imageCount + 1].className = 'fas fa-circle fa-2x circle'
     imageCount++;
   }
+  clearInterval(intervalID);
+  intervalID = setInterval(timedImgChange, 3 * 1000);
 })
+
+
 
 $leftChevron.addEventListener('click', function () {
   if (imageCount === 0) {
@@ -41,6 +47,8 @@ $leftChevron.addEventListener('click', function () {
     $dots[imageCount - 1].className = 'fas fa-circle fa-2x circle'
     imageCount--;
   }
+  clearInterval(intervalID);
+  intervalID = setInterval(timedImgChange, 3 * 1000);
 })
 
 
