@@ -9,6 +9,28 @@ var intervalID = null;
 
 var imageCount = 0
 
+var dotsArray = []
+
+for(var i = 0; i < $dots.length; i++) {
+  dotsArray.push($dots[i]);
+}
+
+$dotsContainer.addEventListener('click', function (e){
+  for(var i = 0; i < $dots.length; i++) {
+    if(e.target.id === $dots[i].id) {
+      $dots[i].className = 'fas fa-circle fa-2x circle';
+      $images[i].className = 'img';
+    }
+    else if (e.target.tagName !== 'DIV'){
+      $dots[i].className = 'far fa-circle fa-2x circle';
+      $images[i].className = 'img hidden';
+    }
+  }
+  imageCount = dotsArray.indexOf(e.target);
+  clearInterval(intervalID);
+  intervalID = setInterval(timedImgChange, 3 * 1000);
+})
+
 
 
 $rightChevron.addEventListener('click', function () {
