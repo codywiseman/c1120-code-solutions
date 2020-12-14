@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row2{
+  display: flex;
+  justify-content: center;
+
+}
+
+.chevron {
+  margin: 0 3rem;
+}
+
+.circle {
+  margin: 0.5rem;
+}
