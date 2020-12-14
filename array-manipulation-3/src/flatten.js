@@ -5,7 +5,11 @@ function flatten(array) {
   for(var i = 0; i < array.length; i++) {
     if(!Array.isArray(array[i])) {
       newArr.push(array[i])
-    } else
+    } else {
+      for (var x = 0; x < array[i].length; x++) {
+        newArr.push(array[i][x])
+      }
+    }
   }
   return newArr;
 };
