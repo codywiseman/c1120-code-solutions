@@ -5,7 +5,6 @@ function isAnagram(firstString, secondString) {
   var splitStringTwo = secondString.split('');
   var firstArray = [];
   var secondArray =[];
-  debugger;
   for(var i = 0; i < splitStringOne.length; i++) {
     if(splitStringOne[i] === ' ') {
       //do nothing

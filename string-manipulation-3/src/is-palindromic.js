@@ -4,7 +4,6 @@ function isPalindromic(string) {
   var splitWord = string.split('');
   var reverseSplit = [];
   var stringSpaceRem = []
-  debugger;
   for(var i = (splitWord.length - 1); i > -1; i--) {
     if(splitWord[i] === ' ') {
       // do nothing
