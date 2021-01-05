@@ -8,7 +8,7 @@
     <title>Bootstrap Challenge</title>
   </head>
   <body>
-    <nav class="align-items-center flex-column flex-sm-row navbar navbar-light navbar-expand-md border-bottom shadow-sm">
+    <nav class="align-items-center flex-column flex-sm-row navbar navbar-light navbar-expand-md border-bottom shadow-sm py-3">
       <a class="navbar-brand mr-sm-auto" href="#">Company Name</a>
       <div>
         <a class="text-dark p-2" href="#">Features</a>
@@ -19,40 +19,77 @@
       <button class="btn btn-outline-primary ml-2 mt-2 mt-sm-0">Sign up</button>
     </nav>
     <div class="pricing-section text-center px-3 pt-4 mx-auto pt-sm-5">
-      <h1 class="font-weight-light">Pricing</h1>
+      <h1 class="font-weight-light pricing-font">Pricing</h1>
       <p class="font-weight-light">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with default Bootstrap componenets and utilities with little customization.</p>
     </div>
-    <div class="container">
-      <div class="d-flex flex-column text-center">
-        <div class="card bg-light mb-3">
-          <div class="card-header">Header</div>
+    <div class="container container-width mb-5 mt-5">
+      <div class="text-center card-deck">
+        <div class="card bg-light mb-3 shadow-sm">
+          <h4 class="card-header font-weight-normal">Free</h4>
           <div class="card-body bg-white">
-            <h5 class="card-title">Light card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-            </p>
-            <button class="btn btn-outline-primary w-100">Sign up for free</button>
+            <h1 class="card-title">$0 <span class="text-muted font-weight-normal mo-font">/ mo</span></h1>
+            <p class="card-text mb-0">10 users included</p>
+            <p class="card-text mb-0">2 GB of storage</p>
+            <p class="card-text mb-0">Email Support</p>
+            <p class="card-text">Help center access</p>
+            <button class="btn btn-outline-primary btn-lg btn-block">Sign up for free</button>
           </div>
         </div>
-        <div class="card bg-light mb-3">
-          <div class="card-header">Header</div>
+        <div class="card bg-light mb-3 shadow-sm">
+          <h4 class="card-header font-weight-normal">Pro</h4>
           <div class="card-body bg-white">
-            <h5 class="card-title">Light card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-            </p>
-            <button class="btn btn-primary w-100">Get Started</button>
+            <h1 class="card-title">$15 <span class="text-muted font-weight-normal mo-font">/ mo</span></h1>
+            <p class="card-text mb-0">20 users included</p>
+            <p class="card-text mb-0">10 GB of storage</p>
+            <p class="card-text mb-0">Priority email Support</p>
+            <p class="card-text">Help center access</p>
+            <button class="btn btn-primary btn-lg btn-block">Get Started</button>
           </div>
         </div>
-        <div class="card bg-light mb-3">
-          <div class="card-header">Header</div>
+        <div class="card bg-light mb-3 shadow-sm">
+          <h4 class="card-header font-weight-normal">Enterprise</h4>
           <div class="card-body bg-white">
-            <h5 class="card-title">Light card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-            </p>
-            <button class="btn btn-primary w-100">contact us</button>
+            <h1 class="card-title">$29 <span class="text-muted font-weight-normal mo-font">/ mo</span></h1>
+            <p class="card-text mb-0">30 users included</p>
+            <p class="card-text mb-0">15 GB of storage</p>
+            <p class="card-text mb-0 text-nowrap">Phone and email Support</p>
+            <p class="card-text">Help center access</p>
+            <button class="btn btn-primary btn-lg btn-block">Contact us</button>
           </div>
         </div>
       </div>
     </div>
+    <footer class="footer-width mx-auto">
+      <div class="pt-md-5 ml-2 mb-3 border-top row">
+        <div class="mt-3 col-12 col-md-3">
+          <img class="mb-2" src="data:image/png;base64,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" alt="Bootsrap logo">
+          <small class="d-block text-muted copy-font">&#169; 2017-2018</small>
+        </div>
+        <div class="d-flex flex-column mt-3 col-6 col-md-3">
+          <h5 class="footer-head-font">Features</h5>
+          <a class="text-muted footer-font" href="#">Cool stuff</a>
+          <a class="text-muted footer-font" href="#">Random feature</a>
+          <a class="text-muted footer-font" href="#">Team feature</a>
+          <a class="text-muted footer-font" href="#">Stuff for developers</a>
+          <a class="text-muted footer-font" href="#">Another one</a>
+          <a class="text-muted footer-font" href="#">Last time</a>
+        </div>
+        <div class="d-flex flex-column mt-3 col-6 col-md-3">
+          <h5 class="footer-head-font">Resources</h5>
+          <a class="text-muted footer-font" href="#">Resource</a>
+          <a class="text-muted footer-font" href="#">Resource name</a>
+          <a class="text-muted footer-font" href="#">Another resource</a>
+          <a class="text-muted footer-font" href="#">Final resource</a>
+        </div>
+        <div class="d-flex flex-column mt-3 col-6 col-md-3">
+          <h5 class="footer-head-font">About</h5>
+          <a class="text-muted footer-font" href="#">Team</a>
+          <a class="text-muted footer-font" href="#">Locations</a>
+          <a class="text-muted footer-font" href="#">Privacy</a>
+          <a class="text-muted footer-font" href="#">Terms</a>
+        </div>
+      </div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   </body>

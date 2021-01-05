@@ -3,5 +3,38 @@
 }
 
 .pricing-section p {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
+}
+
+.pricing-font {
+  font-size: 3.5rem;
+}
+
+.mo-font {
+  font-size: 2rem;
+}
+
+.container-width,
+.footer-width {
+  max-width: 940px;
+}
+
+.card {
+  min-width: 210px;
+}
+
+img {
+  width: 24px;
+}
+
+.footer-head-font{
+  font-size: 1.1rem;
+}
+
+.footer-font {
+  font-size: 0.9rem;
+}
+
+.copy-font {
+  font-size: 0.7rem;
 }
