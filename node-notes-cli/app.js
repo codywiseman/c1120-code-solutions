@@ -22,4 +22,24 @@ switch(expression) {
         process.exit(1)
       }
     })
+  case 'delete':
+    const deleteNote = process.argv[3];
+    const {[deleteNote]: remove, ...rest} = data.notes;
+    data.notes = rest;
+    fs.writeFile('data.json', JSON.stringify(data , null, 2), (err) => {
+      if (err) {
+        console.error(err);
+        process.exit(1)
+      }
+    })
+  case 'update':
+    const noteUpdateNumber = process.argv[3];
+    const updatedNote = process.argv[4];
+    data.notes[noteUpdateNumber] = updatedNote;
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), (err) => {
+      if (err) {
+        console.error(err);
+        process.exit(1)
+      }
+    })
 }
