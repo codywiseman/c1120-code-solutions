@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 
 app.use((req, res) => {
-  console.log(req.method);
   res.send('hello world')
 })
 
