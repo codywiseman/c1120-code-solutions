@@ -6,6 +6,8 @@ let nextId = 1;
 
 const grades = {};
 
+app.use(express.json());
+
 app.get('/api/grades', (req, res) => {
   const gradesArray = [];
   for (let id in grades) {
@@ -13,8 +15,6 @@ app.get('/api/grades', (req, res) => {
   }
   res.json(gradesArray);
 })
-
-app.use(express.json());
 
 app.post('/api/grades', (req, res) => {
   grades[nextId] = req.body;
