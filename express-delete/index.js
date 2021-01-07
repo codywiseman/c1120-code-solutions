@@ -23,20 +23,20 @@ const grades = {
 
 const app = express();
 
-const gradesArr = [];
-for (let id in grades) {
-  gradesArr.push(grades[id]);
-}
 
 app.get('/api/grades', (req, res) => {
+  const gradesArr = [];
+  for (let id in grades) {
+    gradesArr.push(grades[id]);
+  }
   res.json(gradesArr)
 })
 
 app.delete('/api/grades/:id', (req, res) => {
-  for(let i = 0; i < gradesArr.length; i++) {
-    if(gradesArr[i].id === req.params.id) {
-      console.log('hello');
-    }
+  const deleteId = parseInt(req.params.id)
+  if (grades[deleteId]) {
+    delete grades[deleteId];
+    res.sendStatus(204);
   }
 })
 
