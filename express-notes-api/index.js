@@ -20,7 +20,7 @@ app.get('/api/notes', (req, res) => {
 
 app.get('/api/notes/:id', (req, res) => {
   const getId = parseInt(req.params.id);
-  if(getId < 0 || isNaN(getId)) {
+  if (isNaN(getId) || getId < 0) {
     res.status(400).json({error: 'id must be a positive integer'});
   } else if (data.notes[getId]){
     res.status(200).json(data.notes[getId]);
@@ -53,7 +53,7 @@ app.post('/api/notes', (req, res) => {
 
 app.delete('/api/notes/:id', (req, res) => {
   const deleteId = parseInt(req.params.id);
-  if (deleteId < 0 || isNaN(deleteId)) {
+  if (isNaN(deleteId) || deleteId < 0) {
     res.status(400).json({ error: 'id must be a positive integer'})
   } else if (!data.notes[deleteId]) {
     res.status(404).json({ error: `cannot find note with id ${deleteId}`})
@@ -74,7 +74,7 @@ app.delete('/api/notes/:id', (req, res) => {
 app.put('/api/notes/:id', (req, res) => {
   const replaceId = parseInt(req.params.id);
   const replaceNote = req.body;
-  if(replaceId < 0 || isNaN(replaceId)) {
+  if (isNaN(replaceId) || replaceId < 0) {
     res.status(400).json({ error: 'id must be a positive integer'})
   } else if(!replaceNote['content']) {
     res.status(400).json({ error: 'content is a required field'})
