@@ -1,9 +1,12 @@
 const express = require('express');
 const data = require('./data.json');
+const fs = require('fs');
 
 const app = express();
 
 app.use(express.json());
+
+// Client can get a list on notes
 
 app.get('/api/notes', (req, res) => {
   const dataArray = [];
@@ -13,6 +16,8 @@ app.get('/api/notes', (req, res) => {
   res.status(200).json(dataArray);
 })
 
+// Client can get a single note by ID
+
 app.get('/api/notes/:id', (req, res) => {
   const getId = parseInt(req.params.id);
   if(getId < 0 || isNaN(getId)) {
@@ -20,21 +25,71 @@ app.get('/api/notes/:id', (req, res) => {
   } else if (data.notes[getId]){
     res.status(200).json(data.notes[getId]);
   } else {
-    res.status(404).json({error: `cannot find node with id ${getId}`});
+    res.status(404).json({error: `cannot find note with id ${getId}`});
   }
 })
 
+// Client can post a new note
+
 app.post('/api/notes', (req, res) => {
-  if(!req.body['content']) {
-    res.status(400).json({error:'content is a required field'})
-  } else if (req.body['content']) {
+  if (!req.body['content']) {
+    res.status(400).json({ error: 'content is a required field' })
+  } else {
     const newNote = req.body;
     newNote['id'] = data.nextId;
     data.notes[data.nextId] = newNote;
     data.nextId++
-    res.status(201).json(newNote);
+    fs.writeFile('data.json', JSON.stringify(data, null, 2),(err) => {
+      if (err) {
+        res.status(500).json({ error: 'an unexpected error occured' })
+      } else {
+        res.status(201).json(newNote);
+      }
+    })
+  }
+})
+
+// Client can delete a note
+
+app.delete('/api/notes/:id', (req, res) => {
+  const deleteId = parseInt(req.params.id);
+  if (deleteId < 0 || isNaN(deleteId)) {
+    res.status(400).json({ error: 'id must be a positive integer'})
+  } else if (!data.notes[deleteId]) {
+    res.status(404).json({ error: `cannot find note with id ${deleteId}`})
   } else {
-    res.status(500).json({error: 'an unexpected error occured'})
+    delete data.notes[deleteId];
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), (err)=> {
+      if(err) {
+        res.status(500).json({ error: 'an unexpected error occured' })
+      } else {
+        res.status(204).json();
+      }
+    })
+  }
+})
+
+//User can replace a note (PUT) by id
+
+app.put('/api/notes/:id', (req, res) => {
+  const replaceId = parseInt(req.params.id);
+  const replaceNote = req.body;
+  if(replaceId < 0 || isNaN(replaceId)) {
+    res.status(400).json({ error: 'id must be a positive integer'})
+  } else if(!replaceNote['content']) {
+    res.status(400).json({ error: 'content is a required field'})
+  } else if (!data.notes[replaceId]){
+    res.status(404).json({ error: `cannot find note with id ${replaceId}`})
+  } else {
+    replaceNote['id'] = replaceId;
+    data.notes[replaceId] = replaceNote;
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), (err) => {
+      if(err) {
+        res.status(500).json({ error: 'an unexpected error occured' })
+      } else {
+        res.status(200).json(replaceNote);
+      }
+    })
   }
 })
 
