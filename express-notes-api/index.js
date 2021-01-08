@@ -3,6 +3,8 @@ const data = require('./data.json');
 
 const app = express();
 
+app.use(express.json());
+
 app.get('/api/notes', (req, res) => {
   const dataArray = [];
   for (let id in data.notes) {
@@ -19,6 +21,20 @@ app.get('/api/notes/:id', (req, res) => {
     res.status(200).json(data.notes[getId]);
   } else {
     res.status(404).json({error: `cannot find node with id ${getId}`});
+  }
+})
+
+app.post('/api/notes', (req, res) => {
+  if(!req.body['content']) {
+    res.status(400).json({error:'content is a required field'})
+  } else if (req.body['content']) {
+    const newNote = req.body;
+    newNote['id'] = data.nextId;
+    data.notes[data.nextId] = newNote;
+    data.nextId++
+    res.status(201).json(newNote);
+  } else {
+    res.status(500).json({error: 'an unexpected error occured'})
   }
 })
 
