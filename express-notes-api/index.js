@@ -61,7 +61,7 @@ app.delete('/api/notes/:id', (req, res) => {
     delete data.notes[deleteId];
     fs.writeFile('data.json', JSON.stringify(data, null, 2), (err)=> {
       if(err) {
-        res.status(500).json({ error: 'an unexpected error occured' })
+        res.status(500).json({ error: 'an unexpected error occured'})
       } else {
         res.status(204).json();
       }
