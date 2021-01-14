@@ -59,7 +59,40 @@ db.query(sql, params)
 // Update a grade in the grades table
 
 app.put('/api/grades/:gradeId', (req, res) => {
-
+  const gradeId = req.params.gradeId
+  const gradeData = req.body;
+  const name = gradeData['name'];
+  const course = gradeData['course'];
+  const score = gradeData['score'];
+  if (!gradeData['name'] || !gradeData['course'] || !gradeData['score']) {
+    res.status(400).json({ error: 'Name, Course, and Grade are required fields' })
+  } else if (isNaN(gradeData['score']) || gradeData['score'] < 1 || gradeData['score'] > 100) {
+    res.status(400).json({ error: 'Score must be a number between 1 and 100' })
+  } else if (isNaN(gradeId) || gradeId < 1) {
+    res.status(400).json({ error: 'gradeId must be a number greater than 0' })
+  }
+  const sql = `
+    update "grades"
+       set "name" = $1,
+           "course" = $2,
+           "score" = $3
+     where "gradeId" = $4
+     returning *
+    `;
+  const params = [name, course, score, gradeId];
+  db.query(sql, params)
+    .then(result => {
+      const grades = result.rows[0]
+      if(grades === undefined) {
+        res.status(404).json({error: `Cannot fin grade with gradeId ${gradeId}`})
+      } else {
+        res.status(200).json(grades)
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({ error: 'An unexpected error occured.' });
+    })
 })
 
 //Listening on port
