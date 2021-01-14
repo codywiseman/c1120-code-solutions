@@ -59,7 +59,7 @@ db.query(sql, params)
 // Update a grade in the grades table
 
 app.put('/api/grades/:gradeId', (req, res) => {
-  const gradeId = req.params.gradeId
+  const gradeId = req.params.gradeId;
   const gradeData = req.body;
   const name = gradeData['name'];
   const course = gradeData['course'];
@@ -84,9 +84,9 @@ app.put('/api/grades/:gradeId', (req, res) => {
     .then(result => {
       const grades = result.rows[0]
       if(grades === undefined) {
-        res.status(404).json({error: `Cannot fin grade with gradeId ${gradeId}`})
+        res.status(404).json({error: `Cannot find grade with gradeId ${gradeId}`});
       } else {
-        res.status(200).json(grades)
+        res.status(200).json(grades);
       }
     })
     .catch(err => {
@@ -95,8 +95,35 @@ app.put('/api/grades/:gradeId', (req, res) => {
     })
 })
 
+// Delete grades from grades table
+
+app.delete('/api/grades/:gradeId', (req, res) => {
+  const gradeId = parseInt(req.params.gradeId);
+  if (isNaN(gradeId) || gradeId < 1) {
+    res.status(400).json({ error: 'gradeId must be a number greater than 0' })
+  }
+  const sql = `
+    delete from "grades"
+          where "gradeId" = $1
+    returning *
+  `;
+  const params = [gradeId];
+  db.query(sql, params)
+    .then(result => {
+      const deleteGrade = result.rows[0];
+      if (deleteGrade === undefined) {
+        res.status(404).json({ error: `Cannot find grade with gradeId ${gradeId}` });
+      } else {
+        res.status(204).json(deleteGrade);
+      }
+    })
+    .catch(err => {
+      res.status(500).json({ error: 'An unexpected error occured.' });
+    })
+})
+
 //Listening on port
 
 app.listen(8081, () => {
-  console.log('Listening on port 8081!')
+  console.log('Listening on port 8081!');
 })
