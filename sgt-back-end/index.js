@@ -118,6 +118,7 @@ app.delete('/api/grades/:gradeId', (req, res) => {
       }
     })
     .catch(err => {
+      console.error(err);
       res.status(500).json({ error: 'An unexpected error occured.' });
     })
 })
