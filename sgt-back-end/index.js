@@ -42,16 +42,24 @@ app.post('/api/grades', (req, res) => {
   const sql =  `
     insert into "grades" ("name", "course", "score")
       values ($1, $2, $3)
+      returning *
   `;
   const params = [name, course, score];
 db.query(sql, params)
   .then(result => {
-    res.status(201).json(result);
+    const newGrade = result.rows[0]
+    res.status(201).json(newGrade);
   })
   .catch(err => {
     console.error(err);
     res.status(500).json({ error: 'An unexpected error occured.' });
   })
+})
+
+// Update a grade in the grades table
+
+app.put('/api/grades/:gradeId', (req, res) => {
+
 })
 
 //Listening on port
