@@ -34,6 +34,6 @@ const balance = account.reduce((accumulator, currentValue) => {
 console.log('balance:', balance)
 
 const composite = traits.reduce((accumulator, currentValue) => {
-  return Object.assign(currentValue, accumulator);
+  return Object.assign(accumulator, currentValue);
 })
 console.log('composite:', composite);
