@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 function CustomButton(props) {
   return (
-    <button>props.text</button>
+    <button>{props.text}</button>
   )
 }
 
