@@ -3,6 +3,6 @@ import ReactDOM from 'react-dom';
 import ToggleButton from './toggle-switch';
 
 ReactDOM.render(
-  <ToggleButton />,
+  <ToggleButton label='OFF' toggle='toggle-btn toggleOff' circle='circle circleOff'/>,
   document.querySelector('#root')
 )
