@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+}
+
+.toggle-btn {
+  display: flex;
+  border: 0.2rem solid black;
+  height: 3.9rem;
+  width: 7.5rem;
+  border-radius: 3rem;
+}
+
+.circle {
+  height: 96%;
+  width: 48%;
+  background-color: white;
+  align-self: center;
+  border: 0.15rem solid black;
+  border-radius: 3rem;
+  position: relative;
+}
+
+.circleOn {
+  left: 49%;
+}
+
+.circleOff {
+  left: -1%;
+}
+
+.toggleOn {
+  background-color: greenyellow;
+}
+
+.toggleOff {
+  background-color: grey;
+}
