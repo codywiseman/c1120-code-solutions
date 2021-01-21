@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import StopWatch, { pausePlay } from './stopwatch';
-
+import StopWatch from './stopwatch';
 
 ReactDOM.render(
-  <StopWatch start={pausePlay}/>,
+  <StopWatch />,
   document.querySelector('#root')
 )

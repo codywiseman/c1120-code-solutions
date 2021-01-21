@@ -5,6 +5,10 @@ class StopWatch extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.resetTimer = this.resetTimer.bind(this);
+    this.startPause = {
+      pause: "fas fa-pause fa-3x",
+      play: "fas fa-play fa-3x"
+    }
     this.state = {
       timer: 0,
       isRunning: false
@@ -32,15 +36,10 @@ class StopWatch extends React.Component {
         <div onClick={this.resetTimer} className="circle">
           <div className="number">{this.state.timer}</div>
         </div>
-        <div onClick={this.handleClick} className={this.state.isRunning ? this.props.start.pause : this.props.start.play}></div>
+        <div onClick={this.handleClick} className={this.state.isRunning ? this.startPause.pause : this.startPause.play}></div>
       </div>
     );
   }
-}
-
-export const pausePlay = {
-  pause: "fas fa-pause fa-3x",
-  play: "fas fa-play fa-3x"
 }
 
 export default StopWatch;
