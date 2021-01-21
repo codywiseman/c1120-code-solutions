@@ -4,7 +4,6 @@ class ToggleButton extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    console.log(props)
     this.state = {
       isOn: false,
     };
@@ -23,10 +22,10 @@ class ToggleButton extends React.Component {
   render() {
     return (
       <div className="container">
-        <div onClick={this.handleClick} className={this.props.toggle}>
-          <div className={this.props.circle}></div>
+        <div onClick={this.handleClick} className={this.state.isOn ? this.props.toggleOn : this.props.toggleOff}>
+          <div className={this.state.isOn ? this.props.circleOn : this.props.circleOff}></div>
         </div>
-        <h1>{this.props.label}</h1>
+        <h1>{this.state.isOn ? this.props.labelOn : this.props.labelOff}</h1>
       </div>
     );
   }
