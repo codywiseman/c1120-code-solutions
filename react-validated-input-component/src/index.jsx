@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ValidatedInput, { message } from './validated-input';
+import ValidatedInput from './validated-input';
 
 ReactDOM.render(
-  <ValidatedInput message={message}/>,
+  <ValidatedInput />,
   document.querySelector('#root')
 )

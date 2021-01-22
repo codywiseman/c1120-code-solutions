@@ -1,26 +1,35 @@
 import React from 'react';
+import { render } from 'react-dom';
 
 class ValidatedInput extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleIcon = this.handleIcon.bind(this);
+    this.validate = this.validate.bind(this);
+    this.response = {
+      message: '',
+      icon: ''
+    }
     this.state = {value: ''}
-    console.log(props)
   }
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state)
+    this.validate();
   }
   handleChange() {
     this.setState({value: event.target.value})
   }
-  handleIcon () {
-    if(this.state.value.length > 8) {
-      return this.props.message.successIcon;
-    } else {
-      return this.props.message.failIcon;
+  validate() {
+    if (this.state.value.length === 0) {
+      this.response.icon = 'fas fa-times fa-2x';
+      this.response.message = 'A password is required';
+    } if (this.state.value.length < 8 && this.state.value.length > 0) {
+      this.response.icon = 'fas fa-times fa-2x';
+      this.response.message = 'Your password is too short';
+    } if (this.state.value.length > 8) {
+      this.response.icon = 'fas fa-check fa-2x';
+      this.response.message = '';
     }
   }
   render() {
@@ -29,19 +38,12 @@ class ValidatedInput extends React.Component {
         <label htmlFor="password">Password</label>
         <div className="inputRow">
           <input type="password" id="password" value={this.state.props} onChange={this.handleChange} />
-          <i className={this.handleIcon}></i>
+          <i className={this.response.icon}></i>
         </div>
-        <p className="message"></p>
+        <p className="message">{this.response.message}</p>
       </form>
     )
   }
-}
-
-export const message = {
-  noPassword: 'A password is required',
-  tooShort: 'Your password is too short',
-  failIcon: 'fas fa-times fa-2x',
-  successIcon: 'fas fa-check fa-2x'
 }
 
 export default ValidatedInput;
