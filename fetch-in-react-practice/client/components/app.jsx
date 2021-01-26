@@ -25,9 +25,10 @@ export default class App extends React.Component {
      */
     fetch('/api/todos')
       .then(response => response.json())
-      .then(data => this.setState({todos: data}))
+      .then(data => this.setState({ todos: data }))
       .catch(err => console.log(err))
   }
+
 
   addTodo(newTodo) {
     /**
@@ -38,14 +39,20 @@ export default class App extends React.Component {
     * TIP: Be sure to SERIALIZE the todo object in the body with JSON.stringify()
     * and specify the "Content-Type" header as "application/json"
     */
-   fetch('/api/todos', {
-     method: 'POST',
-     headers: {
-       'Content-Type': 'application/json'
-     },
-     body: JSON.stringify(newTodo)
-   })
-    .then()
+    fetch('/api/todos', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newTodo)
+    })
+      .then(response => response.json())
+      .then(response => {
+        const todosArr = [...this.state.todos];
+        todosArr.push(response);
+        this.setState({ todos: todosArr })
+      })
+      .catch(err => console.log(err))
 
   }
 
@@ -64,6 +71,23 @@ export default class App extends React.Component {
      * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
      */
+    const toggleArr = [...this.state.todos];
+    const toggleIndex = (toggleArr, toggleArr.map(index => index.todoId).indexOf(todoId));
+    let status = toggleArr[toggleIndex].isCompleted;
+    const toggleObject = toggleArr[toggleIndex];
+    toggleObject.isCompleted = !status;
+    fetch(`/api/todos/${todoId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(toggleObject)
+    })
+      .then(response => response.json())
+      .then(response => {
+        toggleArr[toggleIndex] = toggleObject;
+        this.setState({todos: toggleArr})
+      })
   }
 
   render() {
