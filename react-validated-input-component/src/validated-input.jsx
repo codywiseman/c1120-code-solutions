@@ -8,28 +8,25 @@ class ValidatedInput extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.validate = this.validate.bind(this);
     this.response = {
-      message: '',
-      icon: ''
+      messageReq: 'A password is required',
+      messageShort: 'Your password is too short',
+      default: '',
+      iconCheck: 'fas fa-check fa-2x',
+      iconX: 'fas fa-times fa-2x'
     }
     this.state = {value: ''}
   }
   handleSubmit(event) {
     event.preventDefault();
-    this.validate();
   }
   handleChange() {
     this.setState({value: event.target.value})
   }
   validate() {
-    if (this.state.value.length === 0) {
-      this.response.icon = 'fas fa-times fa-2x';
-      this.response.message = 'A password is required';
-    } if (this.state.value.length < 8 && this.state.value.length > 0) {
-      this.response.icon = 'fas fa-times fa-2x';
-      this.response.message = 'Your password is too short';
-    } if (this.state.value.length > 8) {
-      this.response.icon = 'fas fa-check fa-2x';
-      this.response.message = '';
+    if(this.state.value === '' ){
+      return this.response.messageReq;
+    } else {
+      return this.response.messageShort;
     }
   }
   render() {
@@ -38,9 +35,9 @@ class ValidatedInput extends React.Component {
         <label htmlFor="password">Password</label>
         <div className="inputRow">
           <input type="password" id="password" value={this.state.props} onChange={this.handleChange} />
-          <i className={this.response.icon}></i>
+          <i className={this.state.value.length < 8 ? this.response.iconX : this.response.iconCheck}></i>
         </div>
-        <p className="message">{this.response.message}</p>
+        <p className="message">{this.state.value.length < 8 ? this.validate() : this.response.default}</p>
       </form>
     )
   }
