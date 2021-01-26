@@ -1,6 +1,6 @@
 import React from 'react';
 
-/*class AppDrawer extends React.Component {
+class AppDrawer extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -13,7 +13,9 @@ import React from 'react';
     this.state = { isHidden: false }
   }
   handleClick() {
-    this.setState({isHidden: !this.state.isHidden})
+    if (event.target.className === 'fas fa-bars fa-2x' || event.target.className === 'gray' || event.target.tagName === 'LI') {
+      this.setState({isHidden: !this.state.isHidden})
+    }
   }
   render () {
     return (
@@ -36,4 +38,4 @@ import React from 'react';
   }
 }
 
-export default AppDrawer; */
+export default AppDrawer;
