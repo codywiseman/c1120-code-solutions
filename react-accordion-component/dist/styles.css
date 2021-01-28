@@ -1,0 +1,23 @@
+body {
+  font-family: sans-serif;
+}
+
+h2 {
+  font-weight: 500;
+  background-color: lightcyan;
+}
+
+.title-box {
+  width: 23rem;
+}
+
+h2,
+.description {
+  border: 0.15rem solid black;
+  padding: 0.5rem;
+  margin: 0.1rem
+}
+
+.hidden {
+  display: none;
+}
