@@ -1,0 +1,45 @@
+User can sign up :
+If there user has not signed-up or signed in the Auth component is rendered.
+The Auth component passes props to the the Authform compononts. The Authform
+components renders a sign-in or sign-up page form depending on the action prop.
+When the user enters their information on in the username and password input boxes,
+the this.state.username and this.state.password is updated. One the user clicks
+register, the handleSubmitFunction is called. A fetch request is made with the POST
+method to the URL /api/auth/sign-up. If the username and password are valid entries,
+the password is hashed. The username and hashedPassword are then inserted into the
+database. The user is then routed back to the sign-in page.
+
+User can sign in:
+In app.js, this.state.route has a value of the return value from the parseRoute
+function be called with the argument window.location.hash. When window.value.hash
+has a value of sign-in, the renderPage function is called and returns the Auth
+component which is rendered in the render method of the class App. The Auth
+component passes props to AuthForm where route.path equals sign-in. The user
+enters their username and password, the states username and password properties
+are updated. When that info is submitted a fetch request is made with the POST
+method to the URL /api/auth/sign-in. The userId and hashedPassword is selected from
+the database where the username is equal to the username entered by the user.
+argon2.verify is used to see if the password and hashedPasswords match. If they match,
+a payload is created with the users information. jwt.sign createed a token with the
+payload and TOKEN_SECRET. The token and payload is then returned to the user. The payload
+is assigned to this to context.sign in which was passed a prop in auth.jsx. The Auth
+component checks to see is user has a value and it it does it returns the Redirect
+component which routes to the home page. renderPage of the App component returns the
+Home component which renders the home page.
+
+User can stay signed in:
+The token returned from the server during the sign-in is added to localStorage. It
+stays in localStorage until the the sign out is clicked and the handleSignOut function
+is called, which removes it from localStorage. When the user refreshes the page the
+componentDidMount function gets the token from localStorage, decodes it and returns the
+payload. As long as the user property in the payload is not empty, it will refresh the
+home page. If storage is empty, user will be set to null and the AuthForm wil render.
+
+User can sign out:
+When the user clicks the sign out button in the navbar, handleSignout, which is a prop that
+was passed to the Home component in App.jsx, is called.handleSignout removes the token from
+localStorage and set the user to null. The changes in state results in the renderPage method
+being called. The renderPage method returns the Home component. The home component checks
+this.context.user which returns the Redirect component with the attribute to="sign-in". This
+results in the URL.hash being set to 'sign-in'. renderPage is called again, but now returns
+Auth, which renders the Auth component.
