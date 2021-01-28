@@ -4,9 +4,7 @@ import Accordion from './accordion';
 
 ReactDOM.render(
   <div>
-    <Accordion title="html" />
-    <Accordion title="css" />
-    <Accordion title="javascript" />
+    <Accordion />
   </div>,
   document.querySelector('#root')
 )
