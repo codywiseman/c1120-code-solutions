@@ -1,7 +1,8 @@
 const graduate = function(credential){
-  return function fullName(fullName) {
+  var fullName = function(fullName) {
     return fullName + ',' + credential;
   }
+  return fullName;
 };
 
 const medicalSchool= graduate('M.D.')
