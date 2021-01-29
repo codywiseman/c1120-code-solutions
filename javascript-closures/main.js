@@ -6,6 +6,8 @@ const graduate = function(credential){
 };
 
 const medicalSchool= graduate('M.D.')
+console.dir(medicalSchool)
+console.log(medicalSchool)
 
 const lawSchool = graduate('Esq.')
 

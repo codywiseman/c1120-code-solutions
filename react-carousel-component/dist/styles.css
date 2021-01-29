@@ -1,0 +1,16 @@
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+i {
+  margin: 0 0.5rem
+}
